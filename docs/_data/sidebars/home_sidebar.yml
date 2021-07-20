@@ -11,7 +11,7 @@ entries:
       url: /
     - output: web,pdf
       title: PytorchToTflite
-      url: /pytorch_to_tflite
+      url: pytorch_to_tflite.html
     output: web
     title: pytorch_to_tflite
   output: web

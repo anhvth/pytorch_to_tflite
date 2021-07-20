@@ -1,6 +1,6 @@
 {
   "pytorch_to_tflite": {
     "Overview": "/",
-    "PytorchToTflite": "/pytorch_to_tflite"
+    "PytorchToTflite": "pytorch_to_tflite.html"
   }
 }
