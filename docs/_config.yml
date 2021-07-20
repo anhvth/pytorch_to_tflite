@@ -1,1 +1,2 @@
 theme: jekyll-theme-cayman
+baseurl: /pytorch_to_tflite/
