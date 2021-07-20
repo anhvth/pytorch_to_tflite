@@ -2,7 +2,7 @@
 SHELL := /bin/bash
 SRC = $(wildcard .//*.ipynb)
 
-all: pytorch_to_tflite docs
+all: pytorch_to_tflite docs git
 
 pytorch_to_tflite: $(SRC)
 	nbdev_build_lib
@@ -35,3 +35,6 @@ dist: clean
 
 clean:
 	rm -rf dist
+
+git: 
+	git add -A && git commit -v && git push
