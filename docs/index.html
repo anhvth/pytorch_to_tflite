@@ -31,7 +31,9 @@ nb_path: "nbs/index.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>pip install pytorch_to_tflite</code></p>
+<p><code>pip install pytorch-to-tflite</code></p>
+<p>or</p>
+<p><code>pip install git+https://github.com/anhvth/pytorch_to_tflite/</code></p>
 
 </div>
 </div>
@@ -48,23 +50,6 @@ nb_path: "nbs/index.ipynb"
 </div>
 </div>
 </div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -116,6 +101,10 @@ nb_path: "nbs/index.ipynb"
   warnings.warn(
 /root/miniconda3/envs/pytorch-to-tflite/lib/python3.9/site-packages/torch/nn/functional.py:3657: UserWarning: The default behavior for interpolate/upsample with float scale_factor changed in 1.6.0 to align with other frameworks/libraries, and now uses scale_factor directly, instead of relying on the computed output size. If you wish to restore the old behavior, please set recompute_scale_factor=True. See the documentation of nn.Upsample for details. 
   warnings.warn(
+/root/miniconda3/envs/pytorch-to-tflite/lib/python3.9/site-packages/torch/onnx/symbolic_helper.py:374: UserWarning: You are trying to export the model with onnx:Upsample for ONNX opset version 9. This operator might cause results to not match the expected results by PyTorch.
+ONNX&#39;s Upsample/Resize operator did not match Pytorch&#39;s Interpolation until opset 11. Attributes to determine how to transform the input were added in onnx:Resize in opset 11 to support Pytorch&#39;s behavior (like coordinate_transformation_mode and nearest_mode).
+We recommend using opset 11 and above for models using this operator. 
+  warnings.warn(&#34;You are trying to export the model with &#34; + onnx_op + &#34; for ONNX opset version &#34;
 </pre>
 </div>
 </div>
@@ -149,6 +138,47 @@ nb_path: "nbs/index.ipynb"
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>WARNING:tensorflow:From /root/miniconda3/envs/pytorch-to-tflite/lib/python3.9/site-packages/tensorflow/python/ops/array_ops.py:5043: calling gather (from tensorflow.python.ops.array_ops) with validate_indices is deprecated and will be removed in a future version.
+Instructions for updating:
+The `validate_indices` argument has no effect. Indices are always validated on CPU and never validated on GPU.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>WARNING:absl:Function `__call__` contains input name(s) input.1 with unsupported characters which will be renamed to input_1 in the SavedModel.
+WARNING:absl:Found untraced functions such as gen_tensor_dict while saving (showing 1 of 1). These functions will not be directly callable after loading.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>INFO:tensorflow:Assets written to: cache/out.onnx.tf/assets
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>INFO:tensorflow:Assets written to: cache/out.onnx.tf/assets
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     {% endraw %}
 
@@ -172,6 +202,22 @@ nb_path: "nbs/index.ipynb"
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;cache/out.onnx.tf.tflite&#39;</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
