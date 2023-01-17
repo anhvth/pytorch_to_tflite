@@ -20,11 +20,7 @@ import os
 import mmcv
 from nanodet.model.arch import build_model
 
-PATH_TO_CONFIG = '/gitprojects/nano-det-parkingline/config/nanodet-g.yml'
-cfg = yaml.safe_load(open(PATH_TO_CONFIG))
-cfg = mmcv.Config(cfg)
 model = build_model(cfg.model)
-
 img = torch.randn(1,3,416,416)
 out = model(img)
 
